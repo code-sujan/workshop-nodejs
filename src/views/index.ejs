@@ -1,0 +1,19 @@
+<h1>Hello <%= data%></h1>
+<table>
+    <thead>
+        <tr>
+            <th>SN</th>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% list.forEach((item, index) => {%>
+            <tr>
+                <td><%= index+1 %></td>
+                <td><%= item.name%></td>
+                <td><%= item.address%></td>
+            </tr>
+        <% })%>
+    </tbody>
+</table>

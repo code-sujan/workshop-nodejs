@@ -1,5 +1,7 @@
+const sequelize = require('@root/sequelize-config');
 module.exports = {
-    index : (req, res) => {
+    index : async (req, res) => {
+        await sequelize.authenticate();
         const list = [
             {name : "one", address :"addr one"},
             {name : "two", address :"addr two"},

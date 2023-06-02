@@ -14,12 +14,16 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "module-alias": "^2.2.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pg": "^8.11.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.32.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
   "_moduleAliases": {
-    "@" : "./src"
+    "@": "./src",
+    "@root" : "./"
   }
 }

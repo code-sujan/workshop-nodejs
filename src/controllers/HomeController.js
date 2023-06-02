@@ -12,7 +12,7 @@ module.exports = {
     },
     new: async(req, res) => {
         const user = User.build({name : 'test', email:'test@gmail.com', address: 'addr'});
-        user.save();
+        await user.save();
         res.send("Success");
     }
 }

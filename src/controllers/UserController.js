@@ -29,5 +29,11 @@ module.exports = {
         user.update();
         await user.save();
         res.redirect('/user');
-    }
+    },
+    delete : async (req, res) => {
+        const id = req.params.id;
+        const user = await User.findByPk(id);
+        await user.destroy();
+        res.redirect('/user');
+    },
 }

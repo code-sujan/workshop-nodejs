@@ -8,5 +8,7 @@ router.get('/', HomeController.index);
 router.get('/home/new', HomeController.new);
 
 router.get('/user', UserController.index);
+router.get('/user/new', UserController.new);
+router.post('/user/new', UserController.newPost);
 
 module.exports = router;

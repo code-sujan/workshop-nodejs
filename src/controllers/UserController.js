@@ -1,17 +1,23 @@
-const User = require("@/models/UserModel")
+const User = require("@/models/UserModel");
+const bcrypt = require('bcrypt');
 
 
 module.exports = {
     index: async (req, res) => {
-        const list = await User.findAll({order : [['id']]});
+        const list = await User.findAll({
+            attributes : ['id', 'name', 'username', 'email', 'address', 'createdAt', 'updatedAt'],
+            order : [['id']]
+        });
         res.render('user/index', {list});
     },
     new : async(req, res) => {
         res.render('user/new');
-    },
+    },   
     newPost: async(req, res) => {
-        const {name, email, address} = req.body;
-        const user = User.build({name, email, address});
+        const {name, email, address, username, password} = req.body;
+        const user = User.build({name, email, address, username});
+        const hashPassword = await bcrypt.hash(password, 5);
+        user.password = hashPassword;
         await user.save();
         res.redirect('/user');
     },

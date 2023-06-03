@@ -1,10 +1,12 @@
 
         <h1>User Page</h1>
+<a href="/user/new" class=" btn btn-primary btn-sm">New</a>
 <table class="table table-bordered">
     <thead>
         <tr>
             <th>SN</th>
             <th>Name</th>
+            <th>Username</th>
             <th>Email</th>
             <th>Address</th>
             <th>Created At</th>
@@ -17,6 +19,7 @@
             <tr>
                 <td><%= index+1 %></td>
                 <td><%= item.name %></td>
+                <td><%= item.username %></td>
                 <td><%= item.email %></td>
                 <td><%= item.address %></td>
                 <td><%= dayjs(item.createdAt).format("YYYY-MM-DD") %></td>

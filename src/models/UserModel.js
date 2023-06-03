@@ -34,5 +34,4 @@ User.init({
     tableName: 'users',
     modelName: 'User' 
   });
-User.sync({alter: true});
 module.exports = User;

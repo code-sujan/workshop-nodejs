@@ -1,0 +1,7 @@
+{
+  "username": "postgres",
+    "password": "data-safety",
+    "database": "workshop_db",
+    "host": "localhost",
+    "dialect": "postgres"
+}

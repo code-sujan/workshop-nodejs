@@ -29,10 +29,11 @@ module.exports = {
     editPost : async(req, res) => {
         const id = req.params.id;
         const user = await User.findByPk(id);
-        const {name, email, address} = req.body;
+        const {name, email, address, username} = req.body;
         user.name = name;
         user.email = email;
         user.address = address;
+        user.username = username;
         user.update();
         await user.save();
         res.redirect('/user');

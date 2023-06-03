@@ -19,7 +19,7 @@
                 <td><%= item.name %></td>
                 <td><%= item.email %></td>
                 <td><%= item.address %></td>
-                <td><%= item.createdAt %></td>
+                <td><%= dayjs(item.createdAt).format("YYYY-MM-DD") %></td>
                 <td><%= item.updatedAt %></td>
                 <td>
                     <a href="/user/edit/<%= item.id %>" class="btn btn-primary btn-sm">Edit</a>

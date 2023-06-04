@@ -1,5 +1,5 @@
 const User = require("@/models/UserModel");
-const bcrypt = require('bcrypt');
+const UserService = require('@/services/UserService');
 
 
 module.exports = {
@@ -14,11 +14,8 @@ module.exports = {
         res.render('user/new');
     },   
     newPost: async(req, res) => {
-        const {name, email, address, username, password} = req.body;
-        const user = User.build({name, email, address, username});
-        const hashPassword = await bcrypt.hash(password, 5);
-        user.password = hashPassword;
-        await user.save();
+        const data = req.body;
+        UserService.createUser(data);
         res.redirect('/user');
     },
     edit : async (req, res) => {

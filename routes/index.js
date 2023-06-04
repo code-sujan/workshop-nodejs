@@ -20,7 +20,7 @@ router.get('/faculty', FacultyController.index);
 router.get('/faculty/new', FacultyController.new);
 
 router.get('/student', StudentController.index);
-router.get('/student/new', StudentController.new);
+router.post('/student/new', StudentController.new);
 
 
 module.exports = router;

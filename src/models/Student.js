@@ -4,6 +4,7 @@ const {
 } = require('sequelize');
 const sequelize = require('@root/sequelize-config');
 const User = require('@/models/UserModel');
+const Faculty = require('@/models/Faculty');
 
 class Student extends Model {
   /**
@@ -24,7 +25,11 @@ Student.init({
   },
   name: DataTypes.STRING,
   address: DataTypes.STRING,
-  userId: DataTypes.INTEGER
+  userId: DataTypes.INTEGER,
+  facultyId :{
+    type: DataTypes.INTEGER,
+    allowNull:false
+  }
 }, {
   sequelize,
   tableName: 'students',
@@ -32,4 +37,8 @@ Student.init({
 });
 Student.belongsTo(User, {foreignKey:'userId'});
 User.hasOne(Student, {foreignKey:'userId'});
+
+Student.belongsTo(Faculty, {foreignKey:'facultyId'});
+Faculty.hasMany(Student, {foreignKey: 'facultyId'});
+
 module.exports = Student;

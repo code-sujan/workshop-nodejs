@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
         '/login',
         '/logout',
         '/apilogin',
-        '/new',
+        '/user/new',
         '/test'
     ];
     if(anonymousUrls.some(x => x == path)) next();

@@ -8,7 +8,6 @@ const LoginController = require('@/controllers/LoginController');
 const router = express.Router();
 
 router.get('/', HomeController.index);
-router.get('/home/new', HomeController.new);
 
 router.get('/user', UserController.index);
 router.get('/user/new', UserController.new);

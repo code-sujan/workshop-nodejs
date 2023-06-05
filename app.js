@@ -4,6 +4,8 @@ const path = require('path');
 const routes = require('./routes/index');
 const ejsLayouts = require('express-ejs-layouts');
 const dayjs = require('dayjs');
+const authenticate = require('@/middlewares/Authenticate');
+const session = require('express-session');
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -15,7 +17,8 @@ app.use(ejsLayouts);
 app.set("layout extractScripts", true);
 app.locals.dayjs = dayjs;
 
-
+app.use(session({secret:"very-very-secret-session-key"}));
+app.use(authenticate);
 app.use('/', routes);
 
 

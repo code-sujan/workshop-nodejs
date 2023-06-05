@@ -16,6 +16,8 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.0",
     "module-alias": "^2.2.2",
     "path": "^0.12.7",
     "pg": "^8.11.0",

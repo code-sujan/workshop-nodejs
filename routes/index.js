@@ -1,8 +1,9 @@
 const express = require('express');
 const HomeController = require('@/controllers/HomeController');
 const UserController = require('@/controllers/UserController');
-const FacultyController = require('../src/controllers/FacultyController');
-const StudentController = require('../src/controllers/StudentController');
+const FacultyController = require('@/controllers/FacultyController');
+const StudentController = require('@/controllers/StudentController');
+const LoginController = require('@/controllers/LoginController');
 
 const router = express.Router();
 
@@ -21,6 +22,10 @@ router.get('/faculty/new', FacultyController.new);
 
 router.get('/student', StudentController.index);
 router.post('/student/new', StudentController.new);
+
+router.get('/login', LoginController.login);
+router.post('/login', LoginController.loginPost);
+router.get('/logout', LoginController.logout);
 
 
 module.exports = router;

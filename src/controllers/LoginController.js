@@ -21,10 +21,6 @@ module.exports = {
     },
     logout : async(req, res) => {
         await req.session.destroy();
-        res.send("Success");
-    },
-
-    loginTest :   async (req, res) => {
-        res.send("Successful");
+        res.redirect('/login');
     }
 }
